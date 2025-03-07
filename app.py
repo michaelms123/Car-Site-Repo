@@ -4,6 +4,7 @@ import streamlit as st
 
 vehicles_df = pd.read_csv('https://practicum-content.s3.us-west-1.amazonaws.com/datasets/vehicles_us.csv')
 vehicles_df['manufacturer'] = vehicles_df['model'].apply(lambda x: x.split()[0])
+vehicles_df.
 
 st.header('Data Viewer')
 st.dataframe(vehicles_df)
@@ -16,7 +17,7 @@ st.write(fig)
 
 #Histogram of condition vs model year
 st.header('Histogram of Condition vs. Model Year')
-fig_2 = px.histogram(df, x='model_year', color='condition')
+fig_2 = px.histogram(vehicles_df, x='model_year', color='condition')
 st.write(fig_2)
 
 st.header('Compare Price Distribution Between Manufacturers')
